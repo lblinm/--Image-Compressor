@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>427</width>
-    <height>312</height>
+    <width>418</width>
+    <height>379</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,15 +16,16 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>10</y>
-     <width>91</width>
+     <x>70</x>
+     <y>0</y>
+     <width>221</width>
      <height>21</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>微软雅黑</family>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -34,157 +35,199 @@
     <string>ImageCompressor</string>
    </property>
   </widget>
-  <widget class="QLabel" name="originLabel">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>60</y>
-     <width>121</width>
-     <height>141</height>
+     <x>10</x>
+     <y>30</y>
+     <width>401</width>
+     <height>341</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="styleSheet">
+       <string notr="true">
 border-width: 2px;
 border-style: solid;
 border-color: black;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="compressedLabel">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>60</y>
-     <width>121</width>
-     <height>141</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="ClickedLabel" name="originLabel">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>181</width>
+         <height>161</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+border-width: 1px;
+border-style: solid;
+border-color: gray;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="compressedLabel">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>180</y>
+         <width>181</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+
+border-width: 1px;
+border-style: solid;
+border-color: gray;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_2">
+      <property name="styleSheet">
+       <string notr="true">
 border-width: 2px;
 border-style: solid;
 border-color: black;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="openButton">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>210</y>
-     <width>80</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="text">
-    <string>打开</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="saveButton">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>210</y>
-     <width>80</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="text">
-    <string>保存</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="compressButton">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>260</y>
-     <width>80</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="text">
-    <string>压缩</string>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="spinBox">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>260</y>
-     <width>71</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>260</y>
-     <width>71</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>9</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>误差容许量</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>40</y>
-     <width>71</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Origin</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>40</y>
-     <width>91</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Compressed</string>
-   </property>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="openButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>161</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+border-style: solid;
+border-color: black;</string>
+       </property>
+       <property name="text">
+        <string>打开</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="saveButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>300</y>
+         <width>161</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+border-style: solid;
+border-color: black;</string>
+       </property>
+       <property name="text">
+        <string>保存</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="spinBox">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>150</y>
+         <width>71</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+border-style: solid;
+border-color: gray;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="compressButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>260</y>
+         <width>161</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+border-style: solid;
+border-color: black;</string>
+       </property>
+       <property name="text">
+        <string>压缩</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>150</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 0px;
+</string>
+       </property>
+       <property name="text">
+        <string>误差容许量</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ClickedLabel</class>
+   <extends>QLabel</extends>
+   <header>clickedlabel.h</header>
+   <slots>
+    <signal>clicked()</signal>
+   </slots>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
