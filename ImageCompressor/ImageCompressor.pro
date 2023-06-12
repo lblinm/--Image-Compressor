@@ -34,3 +34,6 @@ HEADERS += \
 
 FORMS += \
         widget.ui
+
+RESOURCES += \
+    backgroundImg/backgroundimg.qrc

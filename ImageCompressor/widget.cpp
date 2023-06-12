@@ -9,6 +9,25 @@ Widget::Widget(QWidget *parent) :
     this->setWindowTitle("Image Compressor");
     ui->originLabel->setText("点击以加载图片");
 
+    int nMin = 0;
+    int nMax = 40;
+    int nSingleStep = 1;
+
+    // 微调框
+    ui->errorSpinBox->setMinimum(nMin);  // 最小值
+    ui->errorSpinBox->setMaximum(nMax);  // 最大值
+    ui->errorSpinBox->setSingleStep(nSingleStep);  // 步长
+
+    // 滑动条
+    ui->errorHorizontalSlider->setMinimum(nMin);  // 最小值
+    //ui->errorHorizontalSliderr->setMaximum(nMax);  // 最大值
+    ui->errorHorizontalSlider->setSingleStep(nSingleStep);  // 步长
+
+    // 连接信号槽（相互改变）
+    connect(ui->errorSpinBox, SIGNAL(valueChanged(int)), ui->errorHorizontalSlider, SLOT(setValue(int)));
+    connect(ui->errorHorizontalSlider, SIGNAL(valueChanged(int)), ui->errorSpinBox, SLOT(setValue(int)));
+
+    ui->errorSpinBox->setValue(0);
 }
 
 Widget::~Widget()
@@ -17,18 +36,6 @@ Widget::~Widget()
 }
 
 
-void Widget::on_openButton_clicked()
-{
-    QString fileName = QFileDialog::getOpenFileName(this,"选择图片",
-                                                    QCoreApplication::applicationFilePath(),"*.jpg");
-    if(fileName.isEmpty()){ //取消选择文件时
-        QMessageBox::warning(this,"警告","请选择一张图片");
-    }else{
-        //qDebug()<<fileName;  //打印文件名
-        QPixmap pix(fileName);
-        ui->originLabel->setPixmap(pix);
-    }
-}
 
 void Widget::on_originLabel_clicked()
 {
@@ -48,4 +55,17 @@ void Widget::on_originLabel_clicked()
 void Widget::on_saveButton_clicked()
 {
 
+}
+
+void Widget::on_openButton_clicked()
+{
+    QString fileName = QFileDialog::getOpenFileName(this,"选择图片",
+                                                    QCoreApplication::applicationFilePath(),"*.jpg");
+    if(fileName.isEmpty()){ //取消选择文件时
+        QMessageBox::warning(this,"警告","请选择一张图片");
+    }else{
+        //qDebug()<<fileName;  //打印文件名
+        QPixmap pix(fileName);
+        ui->originLabel->setPixmap(pix);
+    }
 }
