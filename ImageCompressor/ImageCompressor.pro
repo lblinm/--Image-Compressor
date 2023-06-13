@@ -37,3 +37,11 @@ FORMS += \
 
 RESOURCES += \
     backgroundImg/backgroundimg.qrc
+
+
+INCLUDEPATH += D:\opencv3.4.0\OpenCV-MinGW-Build-OpenCV-3.4.5\include \
+               D:\opencv3.4.0\OpenCV-MinGW-Build-OpenCV-3.4.5\include \
+               D:\opencv3.4.0\OpenCV-MinGW-Build-OpenCV-3.4.5\include\opencv2
+
+LIBS +=D:\opencv3.4.0\OpenCV-MinGW-Build-OpenCV-3.4.5\x86\mingw\bin\libopencv_*.dll
+

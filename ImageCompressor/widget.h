@@ -7,7 +7,9 @@
 #include <QDebug>
 #include <QKeyEvent>
 #include <QMouseEvent>
+#include "opencv2/opencv.hpp"
 
+using namespace cv;
 
 namespace Ui {
 class Widget;
@@ -29,8 +31,12 @@ private slots:
 
     void on_openButton_clicked();
 
+    void on_compressButton_clicked();
+
 private:
     Ui::Widget *ui;
+    QString fileName="0";
+    Mat srcImg;
 };
 
 #endif // WIDGET_H
