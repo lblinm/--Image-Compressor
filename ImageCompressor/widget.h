@@ -7,7 +7,8 @@
 #include <QDebug>
 #include <QKeyEvent>
 #include <QMouseEvent>
-#include "opencv2/opencv.hpp"
+#include "compressImg.h"
+#include "compressImgDiagonalPriority.h"
 
 using namespace cv;
 
@@ -33,10 +34,19 @@ private slots:
 
     void on_compressButton_clicked();
 
+    void on_openLabel_3_clicked();
+
+    void on_openLabel_2_clicked();
+
+
+    void on_compressButtonDiagonal_clicked();
+
 private:
     Ui::Widget *ui;
     QString fileName="0";
-    Mat srcImg;
-};
+    Mat srcImg;              //原图
+    Mat ImgOfCompressed;     //已压缩图片
 
+
+};
 #endif // WIDGET_H

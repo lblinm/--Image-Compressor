@@ -26,11 +26,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         widget.cpp \
-    clickedlabel.cpp
+    clickedlabel.cpp \
+    compressImg.cpp \
+    compressImgDiagonalPriority.cpp
 
 HEADERS += \
         widget.h \
-    clickedlabel.h
+    clickedlabel.h \
+    compressImg.h \
+    compressImgDiagonalPriority.h
 
 FORMS += \
         widget.ui
@@ -39,9 +43,10 @@ RESOURCES += \
     backgroundImg/backgroundimg.qrc
 
 
-INCLUDEPATH += include \
-               include \
-               include\opencv2
+INCLUDEPATH += .\includeOpencv\
+               .\includeOpencv\
+               .\includeOpencv\opencv2\
 
-LIBS +=include\opencv2\opencv-build-bin\libopencv_*.dll
+
+LIBS += $$PWD\includeOpencv\bin\libopencv_*.dll
 
